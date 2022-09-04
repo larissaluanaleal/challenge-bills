@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { BillModel } from '../../models/bill.model';
 import { BillsService } from '../../services/bills.service';
+import { DialogBillComponent } from '../dialog-bill/dialog-bill.component';
 
 @Component({
   selector: 'app-bills',
@@ -16,7 +18,10 @@ export class BillsComponent implements OnInit {
   displayedColumns: string[] = ['description', 'amount', 'type', 'status'];
   dataSource = new MatTableDataSource(this.bills);
 
-  constructor(public billsService: BillsService) { }
+  constructor(
+    public billsService: BillsService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.listBills();
@@ -44,6 +49,22 @@ export class BillsComponent implements OnInit {
       this.listBills();
     }, error => {
 
+    });
+  }
+
+  public openDialogBill(action: string): void {
+    const dialogRef = this.dialog.open(DialogBillComponent, {
+      maxWidth: '500px',
+      maxHeight: '400px',
+      data: {
+        action: action
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result && result.includeOrUpdate){
+        this.listBills();
+      }
     });
   }
 

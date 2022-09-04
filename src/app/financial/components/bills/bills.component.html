@@ -1,8 +1,8 @@
 <div class="flex">
-  <div class="width-60">
+  <div class="width-1000px">
     <br>
     <div align="end">
-      <button mat-raised-button color="primary" class="text-white">Nova Conta</button>
+      <button mat-raised-button color="primary" class="text-white" (click)="openDialogBill('include')">Nova Conta</button>
     </div>
     <br>
     <table mat-table [dataSource]="bills" class="mat-elevation-z8 width-full">

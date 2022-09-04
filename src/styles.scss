@@ -14,7 +14,6 @@
 // hue. Available color palettes: https://material.io/design/color/
 
 $challenge-primary: mat-palette($mat-orange, 700);
-$challenge-secondary: mat-palette($mat-blue-gray, 600);
 $challenge-accent: mat-palette($mat-pink, A200, A100, A400);
 $challenge-warn:  mat-palette($mat-red);
 
@@ -26,7 +25,6 @@ $challenge-warn: mat-palette($mat-red);
 $challenge-theme: mat-light-theme((
   color: (
     primary: $challenge-primary,
-    secondary: $challenge-secondary,
     accent: $challenge-accent,
     warn: $challenge-warn,
   )

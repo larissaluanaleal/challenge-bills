@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BillsComponent } from './components/bills/bills.component';
 import { BillsService } from './services/bills.service';
 import { MaterialModule } from '../material/material.module';
+import { DialogBillComponent } from './components/dialog-bill/dialog-bill.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   declarations: [
     BillsComponent,
-    TransformBillTypePipe
+    TransformBillTypePipe,
+    DialogBillComponent
   ],
   exports:[BillsComponent],
   providers: [
