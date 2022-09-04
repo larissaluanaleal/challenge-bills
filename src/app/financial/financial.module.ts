@@ -1,3 +1,4 @@
+import { TransformBillTypePipe } from './pipes/transform-bill-type.pipe';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +13,8 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   declarations: [
-    BillsComponent
+    BillsComponent,
+    TransformBillTypePipe
   ],
   exports:[BillsComponent],
   providers: [
