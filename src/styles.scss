@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Roboto:400");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -38,7 +38,6 @@ $challenge-theme: mat-light-theme((
 @include angular-material-theme($challenge-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { 
   margin: 0; 
