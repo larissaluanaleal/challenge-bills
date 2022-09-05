@@ -10,6 +10,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatDividerModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   exports: [
     MatFormFieldModule,
@@ -35,7 +39,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatDividerModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatIconModule,
+    MatTooltipModule
   ],
+  providers:[MatIconRegistry],
   declarations: []
 })
 export class MaterialModule { }

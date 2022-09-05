@@ -2,7 +2,11 @@
   <div class="width-1000px">
     <br>
     <div align="end">
-      <button mat-raised-button color="primary" class="text-white" (click)="openDialogBill('include')">Nova Conta</button>
+      <button mat-raised-button color="primary" 
+        (click)="openDialogBill('include')"
+        class="text-white" >
+        Nova Conta
+      </button>
     </div>
     <br>
     <table mat-table [dataSource]="bills" class="mat-elevation-z8 width-full">
@@ -23,7 +27,20 @@
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        <td mat-cell *matCellDef="let element"> 
+            <mat-icon 
+              [matTooltip]="element.status | transformBillStatus: element.type"
+              *ngIf="element.status" 
+              class="icon-sucess">
+              check_circle
+            </mat-icon>
+            <mat-icon
+              [matTooltip]="element.status | transformBillStatus: element.type" 
+              *ngIf="!element.status"   
+              class="icon-warning">
+              warning
+            </mat-icon>  
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
