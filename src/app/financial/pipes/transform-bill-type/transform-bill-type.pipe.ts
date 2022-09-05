@@ -8,9 +8,9 @@ export class TransformBillTypePipe implements PipeTransform {
   transform(value: any): any {
     switch (value) {
       case "D":
-        return "Débito";
+        return "Pagar";
       case "C":
-        return "Crédito";
+        return "Receber";
       default:
         return "";
     }

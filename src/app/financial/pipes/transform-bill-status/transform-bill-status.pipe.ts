@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TransformBillStatusPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    console.log(value, args)
     if (value) {
       return args == "C" ? "Recebido" : "Pago";
     } else {

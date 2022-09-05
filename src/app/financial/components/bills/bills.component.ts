@@ -29,7 +29,6 @@ export class BillsComponent implements OnInit {
 
   public listBills(): void {
     this.billsService.getBills().subscribe(response => {
-      console.log(response)
       this.bills = response;
     }, error => {
 
@@ -45,7 +44,6 @@ export class BillsComponent implements OnInit {
   }
 
   public openDialogBill(action: string, bill?: BillModel): void {
-    console.log(bill)
     const dialogRef = this.dialog.open(DialogBillComponent, {
       maxWidth: '500px',
       maxHeight: '400px',
