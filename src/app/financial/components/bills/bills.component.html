@@ -11,23 +11,23 @@
     <br>
     <table mat-table [dataSource]="bills" class="mat-elevation-z8 width-full">
       <ng-container matColumnDef="description">
-        <th color="primary" mat-header-cell *matHeaderCellDef> Descrição </th>
-        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        <th style="width:350px;" color="primary" mat-header-cell *matHeaderCellDef> Descrição </th>
+        <td style="width:350px;" mat-cell *matCellDef="let element"> {{element.description}} </td>
       </ng-container>
 
       <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
+        <th style="padding-left: 40px;" mat-header-cell *matHeaderCellDef> Valor </th>
+        <td style="padding-left: 40px;" mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
       </ng-container>
 
       <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> Tipo </th>
-        <td mat-cell *matCellDef="let element"> {{element.type | transformBillType}} </td>
+        <th style="padding-left: 40px;" mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td style="padding-left: 40px;" mat-cell *matCellDef="let element"> {{element.type | transformBillType}} </td>
       </ng-container>
 
       <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> 
+        <th style="padding-left: 40px;" mat-header-cell *matHeaderCellDef> Status </th>
+        <td style="padding-left: 50px;" mat-cell *matCellDef="let element"> 
             <mat-icon 
               [matTooltip]="element.status | transformBillStatus: element.type"
               *ngIf="element.status" 
@@ -43,6 +43,18 @@
         </td>
       </ng-container>
 
+      <ng-container matColumnDef="exclude-edit">
+        <th style="padding-left: 60px;" mat-header-cell *matHeaderCellDef></th>
+        <td style="padding-left: 60px;" mat-cell *matCellDef="let element">
+          <button (click)="openDialogBill(update, element)" mat-icon-button color="primary">
+            <mat-icon matTooltip="Editar" color="primary">edit</mat-icon>
+          </button>
+          <button (click)="excludeBill(element.id)" mat-icon-button color="primary">
+            <mat-icon matTooltip="Excluir" color="primary">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 

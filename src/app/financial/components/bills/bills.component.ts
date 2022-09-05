@@ -15,7 +15,7 @@ export class BillsComponent implements OnInit {
 
   public bills: Array<BillModel> = [];
 
-  displayedColumns: string[] = ['description', 'amount', 'type', 'status'];
+  displayedColumns: string[] = ['description', 'amount', 'type', 'status','exclude-edit'];
   dataSource = new MatTableDataSource(this.bills);
 
   constructor(
@@ -36,33 +36,27 @@ export class BillsComponent implements OnInit {
     });
   }
 
-  public updateBill(data): void {
-    this.billsService.putBill(data).subscribe(response => {
-
-    }, error => {
-
-    });
-  }
-
-  public excludeBill(): void {
-    this.billsService.deleteBill(1).subscribe(response => {
+  public excludeBill(id: number): void {
+    this.billsService.deleteBill(id).subscribe(response => {
       this.listBills();
     }, error => {
 
     });
   }
 
-  public openDialogBill(action: string): void {
+  public openDialogBill(action: string, bill?: BillModel): void {
+    console.log(bill)
     const dialogRef = this.dialog.open(DialogBillComponent, {
       maxWidth: '500px',
       maxHeight: '400px',
       data: {
-        action: action
+        action: action,
+        bill: bill,
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result && result.includeOrUpdate){
+      if(result && result.updateList){
         this.listBills();
       }
     });

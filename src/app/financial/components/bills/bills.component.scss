@@ -1,11 +1,12 @@
+$white: white;
 .mat-header-cell {
   background-color: #F57C00;
   font-size: 16px;
-  color: white;
+  color: $white;
 }
 
 .text-white {
-  color: white;
+  color: $white;
 }
 
 .flex {
@@ -23,7 +24,7 @@
 }
 
 .width-1000px {
-  width: 1000px;
+  width: 900px;
 }
 
 .icon-sucess {
