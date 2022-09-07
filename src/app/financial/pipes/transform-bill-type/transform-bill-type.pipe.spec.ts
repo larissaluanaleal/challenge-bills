@@ -1,6 +1,6 @@
 import { TransformBillTypePipe } from './transform-bill-type.pipe';
 
-fdescribe('Pipe: TransformBillTypee', () => {
+describe('Pipe: TransformBillTypee', () => {
   it('create an instance', () => {
     let pipe = new TransformBillTypePipe();
     expect(pipe).toBeTruthy();
@@ -16,7 +16,7 @@ fdescribe('Pipe: TransformBillTypee', () => {
     expect(pipe.transform('C')).toBe('Crédito');
   });
 
-  it("should transforms 'A' to ''", () => {
+  it("should transforms 'A' to '' ", () => {
     let pipe = new TransformBillTypePipe();
     expect(pipe.transform('A')).toBe('');
   });

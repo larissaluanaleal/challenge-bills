@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TransformBillTypePipe implements PipeTransform {
 
-  transform(value: any): any {
-    switch (value) {
+  transform(typeBill: any): any {
+    switch (typeBill) {
       case "D":
         return "Pagar";
       case "C":

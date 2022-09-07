@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TransformBillStatusPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    if (value) {
-      return args == "C" ? "Recebido" : "Pago";
+  transform(status: boolean, typeBill: string): any {
+    if (status) {
+      return typeBill == "C" ? "Recebido" : "Pago";
     } else {
       return "Pendente"
     }
