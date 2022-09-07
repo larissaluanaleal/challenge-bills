@@ -1,38 +1,36 @@
-$white: white;
+$fontColor: white;
+$success: #019934;
+$warning: #F7AD03;
+$fontSize: 16px;
+
 .mat-header-cell {
   background-color: #F57C00;
-  font-size: 16px;
-  color: $white;
-}
-
-.text-white {
-  color: $white;
+  font-size: $fontSize;
+  color: $fontColor;
 }
 
 .flex {
   display: flex;
   justify-content: center;
-  padding: 10px;
 }
 
-.padding-10 {
-  padding: 10px;
-}
-
-.width-full {
-  width: 100%;
-}
-
-.width-1000px {
-  width: 900px;
+.text-white {
+  color: $fontColor;
 }
 
 .icon-sucess {
-  color: #019934;
+  color: $success;
 }
 
 .icon-warning {
-  color: #F7AD03;
+  color: $warning;
+}
+
+.padding-left-40px{
+  padding-left: 40px;
+}
+.padding-left-50px{
+  padding-left: 50px;
 }
 
 

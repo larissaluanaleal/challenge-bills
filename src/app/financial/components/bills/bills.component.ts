@@ -1,8 +1,9 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { BillModel } from '../../models/bill.model';
+import { BillModel, FilterBills } from '../../models/bill.model';
 import { BillsService } from '../../services/bills.service';
 import { DialogBillComponent } from '../dialog-bill/dialog-bill.component';
 
@@ -14,6 +15,7 @@ import { DialogBillComponent } from '../dialog-bill/dialog-bill.component';
 export class BillsComponent implements OnInit {
 
   public bills: Array<BillModel> = [];
+  public filters: FilterBills = new FilterBills();
 
   displayedColumns: string[] = ['description', 'amount', 'type', 'status','exclude-edit'];
   dataSource = new MatTableDataSource(this.bills);
@@ -28,11 +30,16 @@ export class BillsComponent implements OnInit {
   }
 
   public listBills(): void {
-    this.billsService.getBills().subscribe(response => {
-      this.bills = response;
+    this.billsService.getBills(this.filters).subscribe(response => {
+      this.dataSource.data = response;
     }, error => {
 
     });
+  }
+
+  public resetAndListBills(): void {
+    this.resetSelectStatus();
+    this.listBills();
   }
 
   public excludeBill(id: number): void {
@@ -58,6 +65,15 @@ export class BillsComponent implements OnInit {
         this.listBills();
       }
     });
+  }
+
+  public filter(event: Event): void {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filterValue.trim().toLowerCase().replace('.','').replace(',','.');
+  }
+
+  public resetSelectStatus(): void {
+    this.filters.status = '';
   }
 
 }

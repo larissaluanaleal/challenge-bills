@@ -1,15 +1,15 @@
 {
   "bills": [
     {
-      "id": 1,
       "description": "Energia",
-      "amount": 250.5,
+      "amount": 250.6,
+      "type": "D",
       "status": true,
-      "type": "D"
+      "id": 1
     },
     {
       "description": "Salário",
-      "amount": 9.5,
+      "amount": 9500.1,
       "type": "C",
       "status": true,
       "id": 2
@@ -20,6 +20,13 @@
       "amount": 360.55,
       "status": false,
       "type": "D"
+    },
+    {
+      "description": "Rendimentos",
+      "amount": 450.25,
+      "type": "C",
+      "status": false,
+      "id": 4
     }
   ]
 }

@@ -5,3 +5,8 @@ export interface BillModel {
   status: boolean;
   type: string;
 }
+
+export class FilterBills {
+  public status: string = '';
+  public type: string = '';
+}

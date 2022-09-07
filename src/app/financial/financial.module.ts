@@ -1,4 +1,4 @@
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransformBillTypePipe } from './pipes/transform-bill-type/transform-bill-type.pipe';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,7 @@ import { TransformBillStatusPipe } from './pipes/transform-bill-status/transform
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     MaterialModule
   ],
