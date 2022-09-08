@@ -24,6 +24,4 @@
 - Consultar, cadastrar, atualizar e excluir contas;
 - Consultar contas com os seguintes filtros: descrição, valor, tipo e status.
 
----
-### Arquitetura
 
