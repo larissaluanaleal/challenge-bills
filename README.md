@@ -9,9 +9,9 @@
 ![App Contas](src/assets/images/new.png 'App Contas')
 
 ---
-### Rodar o projeto:
-- Instale json-server `npm i json-server`
+### Rodar o projeto
 - git clone https://github.com/larissaluanaleal/challenge-bills.git
+- Instale json-server `npm i json-server`
 - Execute `npm install`
 - Execute `json-server --watch data-base.json` e deixe rodando.
 - Em outro terminal execute `ng serve -o`
