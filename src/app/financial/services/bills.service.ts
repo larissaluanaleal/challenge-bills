@@ -14,7 +14,7 @@ export class BillsService {
 
   public getBills(filter?: FilterBills): Observable<Array<BillModel>> {
     let url = this.API_BILLS;
-    if (filter.status || filter.type) {
+    if (filter && (filter.status || filter.type)) {
       url = this.createUrlFilter(filter, url);
     }
     return this.http.get<Array<BillModel>>(url);

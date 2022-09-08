@@ -1,5 +1,5 @@
 export interface BillModel {
-  id: string;
+  id: number;
   description: string;
   amount: number;
   status: boolean;

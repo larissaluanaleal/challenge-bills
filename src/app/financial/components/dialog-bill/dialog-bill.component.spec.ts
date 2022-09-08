@@ -6,23 +6,26 @@ import { DebugElement } from '@angular/core';
 import { DialogBillComponent } from './dialog-bill.component';
 
 describe('DialogBillComponent', () => {
-  let component: DialogBillComponent;
-  let fixture: ComponentFixture<DialogBillComponent>;
+  function setup() {
+    const dialogRef = jasmine.createSpyObj('dialog', ['open', 'afterClosed']);
+    const formBuilder = jasmine.createSpyObj('formBuilder', ['group'])
+    const billsService = jasmine.createSpyObj('billsService', ['postBill', 'updateBill'])
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DialogBillComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DialogBillComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    const data = {
+      action: 'include'
+    }
+    const component = new DialogBillComponent(
+      dialogRef,
+      data,
+      formBuilder,
+      billsService
+    )
+    return {
+      component,
+      dialogRef,
+      data,
+      formBuilder,
+      billsService
+    }
+  }
 });

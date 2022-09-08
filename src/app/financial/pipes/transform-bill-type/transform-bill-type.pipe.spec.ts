@@ -8,12 +8,12 @@ describe('Pipe: TransformBillTypee', () => {
 
   it("should transforms 'D' to 'Débito'", () => {
     let pipe = new TransformBillTypePipe();
-    expect(pipe.transform('D')).toBe('Débito');
+    expect(pipe.transform('D')).toBe('Pagar');
   });
 
   it("should transforms 'C' to 'Crédito'", () => {
     let pipe = new TransformBillTypePipe();
-    expect(pipe.transform('C')).toBe('Crédito');
+    expect(pipe.transform('C')).toBe('Receber');
   });
 
   it("should transforms 'A' to '' ", () => {

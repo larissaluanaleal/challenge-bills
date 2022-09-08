@@ -1,4 +1,3 @@
-import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -59,7 +58,7 @@ export class BillsComponent implements OnInit {
         bill: bill,
       }
     });
-
+    
     dialogRef.afterClosed().subscribe(result => {
       if(result && result.updateList){
         this.listBills();
@@ -67,7 +66,7 @@ export class BillsComponent implements OnInit {
     });
   }
 
-  public filter(event: Event): void {
+  public filter(event): void {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase().replace('.','').replace(',','.');
   }
