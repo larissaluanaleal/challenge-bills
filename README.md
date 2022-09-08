@@ -1,8 +1,8 @@
 # Desafio Itaú Contas
 
 - Projeto Angular versão 11.0.5
-- Framework CSS Angular Material
-- Json Server
+- Framework CSS Angular Material versão 11.2.13
+- Json Server 
 
 ![App Contas](src/assets/images/projeto.png 'App Contas')
 ![App Contas](src/assets/images/update.png 'App Contas')
@@ -23,3 +23,7 @@
 - Controle de contas a pagar e receber.
 - Consultar, cadastrar, atualizar e excluir contas;
 - Consultar contas com os seguintes filtros: descrição, valor, tipo e status.
+
+---
+### Arquitetura
+
