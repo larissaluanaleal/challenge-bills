@@ -9,12 +9,17 @@
 ![App Contas](src/assets/images/new.png 'App Contas')
 
 ---
-## Rodar o projeto:
-
+### Rodar o projeto:
+- Instale json-server `npm i json-server`
 - git clone https://github.com/larissaluanaleal/challenge-bills.git
 - Execute `npm install`
-- Execute `json-server --watch data-base.json` deixe rodando.
+- Execute `json-server --watch data-base.json` e deixe rodando.
 - Em outro terminal execute `ng serve -o`
 - Acesse http://localhost:4200/
 
 ---
+
+### Funcionalidades:
+- Controle de contas a pagar e receber.
+- Consultar, cadastrar, atualizar e excluir contas;
+- Consultar contas com os seguintes filtros: descrição, valor, tipo e status.
